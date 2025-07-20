@@ -1,64 +1,19 @@
-<<<<<<< HEAD
-# GecovaFront
+# Proyecto Gecova - Peticiones
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+Login, perimte el ingreso a la aplicacion. Contiene validaciones del lado del cliente.
 
-## Development server
+![Login con validaciones](docs/imgs/loginDesck.png)
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+Una vez autenticado el usuario, se peude acceder a la vista de home.
+![Home](docs/imgs/home.png)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+En el home es apreciable los botones de peticiones, se puede accedera las petiones
+que tiene cada usuario presionando el boton de Peticion lo cual dirige a una vista diferente.
 
-## Code scaffolding
+![Home](docs/imgs/listadoPeticiones.png)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Para agregar una nueva peticion se puede presionar el boton de Nueva peticion, esta acción
+despliega un formulario.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# GecovaFrontEnd
-El proyecto mostrado muestra un front end realizado en angular
->>>>>>> 766acf89c5f2b741ba08c75da0d057ec12e32ea7
+![Home](docs/imgs/peticion.png)
