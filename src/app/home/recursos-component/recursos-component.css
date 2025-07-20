@@ -1,0 +1,14 @@
+
+h3 {
+  color: #05475f;
+}
+
+p {
+  color: #085e77;
+}
+
+h3,
+p {
+  text-align: left;
+  margin-left: 0;
+}

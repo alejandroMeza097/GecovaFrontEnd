@@ -1,0 +1,39 @@
+.anuncios {
+  width: 180px;
+  background-color: #05475f;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icono {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.contenido .seccion {
+  margin-bottom: 15px;
+}
+
+.contenido hr {
+  border: 1px solid #ffffff33; /* línea blanca semi-transparente */
+}
+
+.recad {
+  color: #05475f;
+}
+
+.gestor {
+  color: #085e77;
+}
+
+.rh {
+  color: #085e77;
+}
