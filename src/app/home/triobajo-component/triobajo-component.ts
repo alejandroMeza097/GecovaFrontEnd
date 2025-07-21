@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-triobajo-component',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './triobajo-component.css'
 })
 export class TriobajoComponent {
+  @Output() peticiones = new EventEmitter<void>();
 
+  irAPeticiones(){
+    this.peticiones.emit();
+  }
 }
