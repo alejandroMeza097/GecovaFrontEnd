@@ -1,7 +1,9 @@
-<div class="container">
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<!--
 
-  <!-- Checkbox Column -->
+<div class="container">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
       <mat-checkbox (change)="$event ? toggleAllRows() : null"
@@ -137,7 +139,7 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"
       (click)="selection.toggle(row)">
   </tr>
-</table>
+</mat-table>
 
 </div>
 <mat-paginator [length]="dataSource.data.length"
@@ -145,3 +147,115 @@
               [pageSizeOptions]="[10, 20, 30, 40, 50, 100]"
               aria-label="Select page">
 </mat-paginator>
+-->
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" multiTemplateDataRows>
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox
+          (change)="toggleAllRows()"
+          [checked]="isAllSelected()"
+          [indeterminate]="selection.hasValue() && !isAllSelected()"
+          [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox
+          (click)="$event.stopPropagation()"
+          (change)="$event ? selection.toggle(row) : null"
+          [checked]="selection.isSelected(row)"
+          [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Dynamic Data Columns -->
+    <ng-container matColumnDef="solicitante">
+      <th mat-header-cell *matHeaderCellDef> Solicitante </th>
+      <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prioridad">
+      <th mat-header-cell *matHeaderCellDef> Prioridad </th>
+      <td mat-cell *matCellDef="let element"> {{element.priority}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cliente">
+      <th mat-header-cell *matHeaderCellDef> Cliente </th>
+      <td mat-cell *matCellDef="let element"> {{element.customer}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="unidad">
+      <th mat-header-cell *matHeaderCellDef> Unidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.organizationUnit}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="codigoProyecto">
+      <th mat-header-cell *matHeaderCellDef> Código Proyecto </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectCode}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombreProyecto">
+      <th mat-header-cell *matHeaderCellDef> Nombre Proyecto </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombreGestor">
+      <th mat-header-cell *matHeaderCellDef> Gestor </th>
+      <td mat-cell *matCellDef="let element"> {{element.managerName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="perfil">
+      <th mat-header-cell *matHeaderCellDef> Perfil </th>
+      <td mat-cell *matCellDef="let element"> {{element.profile}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nivel">
+      <th mat-header-cell *matHeaderCellDef> Nivel </th>
+      <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="posiciones">
+      <th mat-header-cell *matHeaderCellDef> Posiciones </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tasa">
+      <th mat-header-cell *matHeaderCellDef> Tasa </th>
+      <td mat-cell *matCellDef="let element"> {{element.rate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tasaTope">
+      <th mat-header-cell *matHeaderCellDef> Tasa Tope </th>
+      <td mat-cell *matCellDef="let element"> {{element.rateCap}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modalidad">
+      <th mat-header-cell *matHeaderCellDef> Modalidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.mode}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="comentariosGrales">
+      <th mat-header-cell *matHeaderCellDef> Comentarios </th>
+      <td mat-cell *matCellDef="let element"> {{element.generalComments}} </td>
+    </ng-container>
+
+    <!-- Header and Rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)"
+        [class.selected]="selection.isSelected(row)">
+    </tr>
+  </table>
+
+  <!-- Paginador -->
+   <mat-paginator [length]="dataSource.data.length"
+              [pageSize]="10"
+              [pageSizeOptions]="[10, 20, 30, 40, 50, 100]"
+              aria-label="Select page">
+</mat-paginator>
+<!-- <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>-->
+ 
+</div>

@@ -1,4 +1,5 @@
 
+import { NumberSymbol } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
@@ -6,37 +7,40 @@ import { Observable } from "rxjs";
 
  
 export interface peticion{
-  id?:number;
-  cliente:string;
-  unidad:string;
-  nombreGestor:string;
-  solicitante:string;
-  razonSocial:string;
-  prioridad:string;
-  posiciones:string;
-  tipoContratacion: string;
-  codigoProyecto:string;
-  nombreProyecto:string;
-  elementoParaContrataciones:string;
-  mesesAsignacion:string;
-  modalidad:string;
-  lugarDefinitivo:string;
-  tipoAsignacion:string;
-  planCarrera:string;
-  rolDesarrollo:string;
-  evaluadorPerformanceTalent:string;
-  tasa:number;
-  tasaTope:number;
-  tipoProyecto:string;
-  margenPresupuesto:number;
-  margenAcumulado:number;
-  planRecuperacion:string;
-  comentariosGrales:string;
-  perfil:string;
-  nivel:string;
-  conocimientosTecnicos:string;
-  conocimientosFuncionales:string;
 
+
+
+  customer:string;
+  organizationUnit:string;  
+  managerName:string;
+  applicant:string;
+  companyName:string;
+  priority: string;
+  position: number;
+  typeContratc: string;
+  projectCode: string;
+  projectName: string;
+  elementContratc:  string;
+  monthAssign: number;
+  mode: string;
+  definitivePlace: string;
+  typeAssign: string;
+  careerPlan: string;
+  developmentRole:string;
+  talentPerformance: string;
+  rate:number;
+  rateCap:number;              
+  projectType: string;
+  budgetedMargin: number;           
+  accumulatedMargin: Number;
+  recoveryPlan: string;
+  generalComments: string;
+  profile: string;
+  level:string;
+  technicalKnowledge: string;
+  functionalKnowledge: string;
+  id?:number;
+  
 }
 
  
@@ -56,6 +60,10 @@ export class PeticionService {
   
    crearPeticion(dataPeticion:peticion ): Observable<peticion> {
      return this.http.post<peticion>(this.apiUrl,dataPeticion);
+   }
+
+   obtenerPeticiones():Observable<peticion[]>{
+    return this.http.get<peticion[]>(this.apiUrl);
    }
  
 }
