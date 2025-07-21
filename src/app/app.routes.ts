@@ -8,7 +8,7 @@ import { Peticion } from './peticion/peticion';
 export const routes: Routes = [
   { path: '', component: LoginComponent },      
   { path: 'home', component: Home },
-  {path:'petiones',component:peticiones},
+  {path:'peticiones',component:peticiones},
   {path:'peticion',component:Peticion}     
 ];
 

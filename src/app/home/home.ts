@@ -20,6 +20,6 @@ export class Home {
   constructor(private router: Router) {}
 
   irAPeticiones() {
-    this.router.navigate(['/petiones']);
+    this.router.navigate(['/peticiones']);
   }
 }

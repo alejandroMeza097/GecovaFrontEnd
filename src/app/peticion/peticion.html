@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="peticionForm" (ngSubmit)="onSubmit()">
 <main class="main">
   <div class="titulo-container">
     <h3>Agregar peticion</h3>
@@ -11,7 +11,7 @@
     <div class="fila">
       <div class="campo">
         <h4>Cliente</h4>
-        <select class="select">
+        <select class="select" formControlName="customer">
           <option value="">--Seleccione un valor--</option>
           <option value="cliente1">Cliente 1</option>
           <option value="cliente2">Cliente 2</option>
@@ -20,7 +20,7 @@
       </div>
       <div class="campo">
         <h4>Unidad organizativa</h4>
-        <select class="select">
+        <select class="select" formControlName="organizationUnit">
           <option value="">--Seleccione un valor--</option>
           <option value="unidad1">Unidad 1</option>
           <option value="unidad2">Unidad 2</option>
@@ -29,7 +29,7 @@
       </div>
       <div class="campo">
         <h4>Nombre del gestor</h4>
-        <select class="select">
+        <select class="select" formControlName="managerName">
           <option value="">--Seleccione un valor--</option>
           <option value="gestor1">Gestor 1</option>
           <option value="gestor2">Gestor 2</option>
@@ -38,11 +38,13 @@
       </div>
       <div class="campo">
         <h4>Solicitante mercado(Minsait)</h4>
-        <input  class="input" type="text" placeholder="--Agregar texto--" />
+        <input  class="input" type="text" placeholder="--Agregar texto--"  formControlName="applicant"/>
       </div>
+
+
       <div class="campo">
         <h4>Razón social</h4>
-        <select class="select">
+        <select class="select" formControlName="companyName">
           <option value="">--Seleccione un valor--</option>
           <option value="razon1">Razón 1</option>
           <option value="razon2">Razón 2</option>
@@ -60,20 +62,23 @@
     <div class="fila">
       <div class="campo">
         <h4>Prioridad</h4>
-        <select class="select">
-          <option value="">--Seleccione un valor--</option>
+        <select class="select" formControlName="priority">
+          <option value="" >--Seleccione un valor--</option>
           <option value="cliente1">Cliente 1</option>
           <option value="cliente2">Cliente 2</option>
           <option value="cliente3">Cliente 3</option>
         </select>
       </div>
+
+
+
       <div class="campo">
         <h4>Posiciones</h4>
-        <select  class="select">
+        <select  class="select" formControlName="position">
           <option value="">--Seleccione un valor--</option>
-          <option value="cliente1">Cliente 1</option>
-          <option value="cliente2">Cliente 2</option>
-          <option value="cliente3">Cliente 3</option>
+          <option value="1">Cliente 1</option>
+          <option value="2">Cliente 2</option>
+          <option value="3">Cliente 3</option>
         </select>
       </div>
       <div class="campo"></div>
@@ -84,7 +89,7 @@
     <div class="fila space-between">
       <div class="campo">
         <h4>Tipo de contratacion</h4>
-        <select class="select">
+        <select class="select" formControlName="typeContratc">
           <option value="">--Seleccione un valor--</option>
           <option value="cliente1">Cliente 1</option>
           <option value="cliente2">Cliente 2</option>
@@ -93,7 +98,7 @@
       </div>
       <div class="campo">
         <h4>Codigo de proyecto</h4>
-        <select class="select">
+        <select class="select" formControlName="projectCode">
           <option value="">--Seleccione un valor--</option>
           <option value="unidad1">Unidad 1</option>
           <option value="unidad2">Unidad 2</option>
@@ -102,7 +107,7 @@
       </div>
       <div class="campo">
         <h4>Nombre del proyecto</h4>
-        <select class="select">
+        <select class="select" formControlName="projectName">
           <option value="">--Seleccione un valor--</option>
           <option value="gestor1">Gestor 1</option>
           <option value="gestor2">Gestor 2</option>
@@ -111,7 +116,7 @@
       </div>
       <div class="campo">
         <h4>Elemento para contrataciones</h4>
-        <select class="select">
+        <select class="select" formControlName="elementContratc">
           <option value="">--Seleccione un valor--</option>
           <option value="solicitante1">Solicitante 1</option>
           <option value="solicitante2">Solicitante 2</option>
@@ -123,16 +128,16 @@
     <div class="fila space-between">
       <div class="campo">
         <h4>Meses de Asignación</h4>
-        <select class="select">
+        <select class="select" formControlName="monthAssign">
           <option value="">--Seleccione un valor--</option>
-          <option value="cliente1">Cliente 1</option>
-          <option value="cliente2">Cliente 2</option>
-          <option value="cliente3">Cliente 3</option>
+          <option value="1">Cliente 1</option>
+          <option value="2">Cliente 2</option>
+          <option value="3">Cliente 3</option>
         </select>
       </div>
       <div class="campo">
         <h4>Modalidad</h4>
-        <select class="select">
+        <select class="select" formControlName="mode">
           <option value="">--Seleccione un valor--</option>
           <option value="unidad1">Unidad 1</option>
           <option value="unidad2">Unidad 2</option>
@@ -144,7 +149,7 @@
       </div>
       <div class="campo">
         <h4>Lugar Definitivo</h4>
-        <select class="select">
+        <select class="select" formControlName="definitivePlace">
           <option value="">--Seleccione un valor--</option>
           <option value="solicitante1">Solicitante 1</option>
           <option value="solicitante2">Solicitante 2</option>
@@ -156,7 +161,7 @@
     <div class="fila space-between">
       <div class="campo">
         <h4>Tipo de Asignación</h4>
-        <select class="select">
+        <select class="select" formControlName="typeAssign">
           <option value="">--Seleccione un valor--</option>
           <option value="cliente1">Cliente 1</option>
           <option value="cliente2">Cliente 2</option>
@@ -165,7 +170,7 @@
       </div>
       <div class="campo">
         <h4>Plan de carrera</h4>
-        <select class="select">
+        <select class="select"  formControlName="careerPlan">
           <option value="">--Seleccione un valor--</option>
           <option value="unidad1">Unidad 1</option>
           <option value="unidad2">Unidad 2</option>
@@ -174,7 +179,7 @@
       </div>
       <div class="campo">
         <h4>Rol de Desarrollo</h4>
-        <select class="select">
+        <select class="select" formControlName="developmentRole">
           <option value="">--Seleccione un valor--</option>
           <option value="unidad1">Unidad 1</option>
           <option value="unidad2">Unidad 2</option>
@@ -183,7 +188,7 @@
       </div>
       <div class="campo">
         <h4>Evaluador de performance talent</h4>
-        <select class="select">
+        <select class="select" formControlName="talentPerformance">
           <option value="">--Seleccione un valor--</option>
           <option value="solicitante1">Solicitante 1</option>
           <option value="solicitante2">Solicitante 2</option>
@@ -195,25 +200,25 @@
     <div class="fila space-between">
       <div class="campo">
         <h4>Tasa</h4>
-        <select class="select">
+        <select class="select" formControlName="rate">
           <option value="">--Seleccione un valor--</option>
-          <option value="cliente1">Cliente 1</option>
-          <option value="cliente2">Cliente 2</option>
-          <option value="cliente3">Cliente 3</option>
+          <option value="1">Cliente 1</option>
+          <option value="2">Cliente 2</option>
+          <option value="3">Cliente 3</option>
         </select>
       </div>
       <div class="campo">
         <h4>Tasa Tope</h4>
-        <select class="select">
+        <select class="select" formControlName="rateCap">
           <option value="">--Seleccione un valor--</option>
-          <option value="unidad1">Unidad 1</option>
-          <option value="unidad2">Unidad 2</option>
-          <option value="unidad3">Unidad 3</option>
+          <option value="1">Unidad 1</option>
+          <option value="2">Unidad 2</option>
+          <option value="3">Unidad 3</option>
         </select>
       </div>
       <div class="campo">
         <h4>Tipo de Proyecto</h4>
-        <select class="select">
+        <select class="select" formControlName="projectType">
           <option value="">--Seleccione un valor--</option>
           <option value="unidad1">Unidad 1</option>
           <option value="unidad2">Unidad 2</option>
@@ -226,22 +231,22 @@
     <div class="fila space-between">
       <div class="campo">
         <h4>Margen presupuestado(%)</h4>
-        <input class="input" type="text" />
+        <input class="input" type="text" formControlName="budgetedMargin" />
       </div>
       <div class="campo">
         <h4>Margen acumulado(%)</h4>
-        <input class="input" type="text" />
+        <input class="input" type="text"  formControlName="accumulatedMargin"/>
       </div>
       <div class="campo">
         <h4>Plan de recuperación</h4>
-        <input class="input" type="text" />
+        <input class="input" type="text" formControlName="recoveryPlan" />
       </div>
     </div>
 
     <div class="fila space-between">
       <div class="campo comentarios-generales">
         <h4>Comentarios Generales</h4>
-        <textarea></textarea>
+        <textarea formControlName="generalComments"></textarea>
       </div>
       <div class="campo comentarios-generales">
       </div>
@@ -256,7 +261,7 @@
     <div class="fila space-between">
       <div class="campo">
         <h4>Perfil*</h4>
-        <select class="select">
+        <select class="select" formControlName="profile">
           <option value="">--Seleccione un valor--</option>
           <option value="cliente1">Cliente 1</option>
           <option value="cliente2">Cliente 2</option>
@@ -265,7 +270,7 @@
       </div>
       <div class="campo">
         <h4>Nivel*</h4>
-        <select class="select">
+        <select class="select" formControlName="level">
           <option value="">--Seleccione un valor--</option>
           <option value="unidad1">Unidad 1</option>
           <option value="unidad2">Unidad 2</option>
@@ -278,12 +283,12 @@
 
     <div class="fila space-between">
       <div class="campo comentarios-generales">
-        <h4>Comentarios generales</h4>
-        <textarea ></textarea>
+        <h4>Conocimientos tecnicos</h4>
+        <textarea formControlName="technicalKnowledge" ></textarea>
       </div>
       <div class="campo comentarios-generales">
-        <h4>Comentarios generales</h4>
-        <textarea></textarea>
+        <h4>Conocimientos funcionales</h4>
+        <textarea formControlName="functionalKnowledge"></textarea>
       </div>
     </div>
   </div>
@@ -292,7 +297,7 @@
     <div class="linea-superior"></div>
     <div class="botones">
       <button class="btn-cerrar">CERRAR</button>
-      <button class="btn-registrar">REGISTRAR</button>
+      <button class="btn-registrar" type="submit">REGISTRAR</button>
     </div>
   </div>
 </main>
