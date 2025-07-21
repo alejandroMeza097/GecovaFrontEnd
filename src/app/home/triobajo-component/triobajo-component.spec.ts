@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccesosComponent } from './accesos-component';
+import { TriobajoComponent } from './triobajo-component';
 
-describe('AccesosComponent', () => {
-  let component: AccesosComponent;
-  let fixture: ComponentFixture<AccesosComponent>;
+describe('TriobajoComponent', () => {
+  let component: TriobajoComponent;
+  let fixture: ComponentFixture<TriobajoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AccesosComponent]
+      imports: [TriobajoComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AccesosComponent);
+    fixture = TestBed.createComponent(TriobajoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

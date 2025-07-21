@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from "./navbar-component/navbar-component";
-import { ImgcarruselComponent } from "./imgcarrusel-component/imgcarrusel-component";
-import { NotificacionesComponent } from "./notificaciones-component/notificaciones-component";
-import { AnunciosComponent } from "./anuncios-component/anuncios-component";
-import { AccesosComponent } from "./accesos-component/accesos-component";
+import { NavbarComponent } from './navbar-component/navbar-component';
+import { ImgcarruselComponent } from './imgcarrusel-component/imgcarrusel-component';
+import { NotificacionesComponent } from './notificaciones-component/notificaciones-component';
+import { TriobajoComponent } from './triobajo-component/triobajo-component';
 import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, ImgcarruselComponent, NotificacionesComponent, AnunciosComponent, AccesosComponent],
+  imports: [
+    NavbarComponent,
+    ImgcarruselComponent,
+    NotificacionesComponent,
+    TriobajoComponent,
+  ],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
 })
 export class Home {
+  constructor(private router: Router) {}
 
-  constructor(private router:Router){}
-  
-  irAPeticiones(){
-    this.router.navigate(['/petiones'])
+  irAPeticiones() {
+    this.router.navigate(['/petiones']);
   }
-
 }
