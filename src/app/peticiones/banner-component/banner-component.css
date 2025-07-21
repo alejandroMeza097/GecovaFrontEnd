@@ -1,5 +1,5 @@
 .banner {
-  background-image: url('/src/assets/images/minsaitfotoia.png'); 
+  background-image: url('../../../assets/images/minsaitfotoia.png'); 
   background-size: cover;
   background-position: center;
   height: 100px;
