@@ -57,19 +57,6 @@ body {
   flex-grow: 1;
 }
 
-.login-button {
-  background-color: #9eb6bd;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #16a085;
-}
-
 .appian-logo {
   width: 100px; /* o el tamaño que desees */
   height: auto; /* mantiene la proporción */
@@ -78,4 +65,19 @@ body {
 .home-logo {
   width: 20px; /* o el tamaño que desees */
   height: auto; /* mantiene la proporción */
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
 }
