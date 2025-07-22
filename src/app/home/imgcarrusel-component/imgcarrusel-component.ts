@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-imgcarrusel-component',
   imports: [],
   templateUrl: './imgcarrusel-component.html',
-  styleUrl: './imgcarrusel-component.css'
+  styleUrl: './imgcarrusel-component.css',
 })
-export class ImgcarruselComponent {
-
-}
+export class ImgcarruselComponent {}

@@ -3,34 +3,8 @@
     <h1>Welcome Back</h1>
     <h2>User - Analyst</h2>
     <div class="fecha-hora">
-      <span id="fecha">📅</span>
-      <span id="hora">🕒</span>
+      <span>📅 19/07/25</span>
+      <span>🕒 7:31 PM</span>
     </div>
   </div>
 </div>
-
-<script>
-  function actualizarFechaHora() {
-    const ahora = new Date();
-
-    // Opciones para formato local
-    const opcionesFecha = { day: "2-digit", month: "2-digit", year: "2-digit" };
-    const opcionesHora = { hour: "2-digit", minute: "2-digit", hour12: true };
-
-    // Obtener elementos
-    const fechaElemento = document.getElementById("fecha");
-    const horaElemento = document.getElementById("hora");
-
-    // Actualizar contenido
-    fechaElemento.textContent =
-      "📅 " + ahora.toLocaleDateString("es-MX", opcionesFecha);
-    horaElemento.textContent =
-      "🕒 " + ahora.toLocaleTimeString("es-MX", opcionesHora);
-  }
-
-  // Ejecutar al cargar
-  actualizarFechaHora();
-
-  // Actualizar cada segundo para mantener sincronía
-  setInterval(actualizarFechaHora, 1000);
-</script>
